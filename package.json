@@ -1,24 +1,30 @@
 {
-  "name": "boilerplate",
-  "version": "1.0.0",
-  "main": "index.html",
+  "name": "bp",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "build": "rm -rf dist/ && parcel build src/views/index.pug --public-url ./",
-    "build-no-public": "rm -rf dist/ && parcel build src/views/index.pug",
-    "nuke": "rm node_modules/ -rf package-lock.json && npm install",
-    "start": "rm -rf dist/ &&parcel ./src/views/index.pug --open"
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.4.10",
+    "@stencil/core": "~0.16.2",
+    "@typescript-eslint/parser": "^1.5.0",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.1",
-    "parcel-bundler": "^1.12.0",
-    "pug": "^2.0.3",
-    "sass": "^1.17.2"
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-react": "^7.12.4"
   },
-  "description": ""
+  "license": "MIT"
 }
